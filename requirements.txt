@@ -1,0 +1,18 @@
+# Document Parsing & Orchestration
+langchain==0.3.0
+langchain-community==0.3.0
+langgraph==0.2.0  # For production state management
+
+# Vector Database & Embeddings
+chromadb==0.5.0
+sentence-transformers==3.0.0
+
+# Environment & Validation
+python-dotenv==1.0.1
+pydantic==2.9.0
+
+# Evaluation
+ragas==0.2.0
+
+# Notebook Support
+ipykernel

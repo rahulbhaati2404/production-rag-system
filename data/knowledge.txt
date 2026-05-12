@@ -1,0 +1,27 @@
+Project Overview: AI Engineering Standards 2026
+Document ID: TECH-REF-2026-01
+Author: AI Systems Architecture Group
+
+1. Introduction to Agentic RAG
+As of 2026, standard Retrieval-Augmented Generation (RAG) has evolved into Agentic RAG. This architecture utilizes "Reasoning Loops" where the system doesn't just retrieve once; it evaluates the quality of the retrieved chunks and decides if it needs to perform a secondary search. This is often implemented using frameworks like LangGraph or AutoGen.
+
+2. Infrastructure and Vector Databases
+The industry has moved toward hybrid vector-relational databases. While ChromaDB remains the standard for local development and prototyping, production environments frequently utilize Qdrant or Weaviate. These systems support "Sparse-Dense Hybrid Search," which combines BM25 keyword matching with semantic vector search. This combination improves retrieval accuracy for specific technical terms by approximately 35%.
+
+3. Small Language Models (SLMs)
+The year 2026 marks the dominance of SLMs (Small Language Models). Models like Llama 3.2 (8B) and Microsoft Phi-4 (3.8B) are now capable of reasoning tasks that previously required models with over 100 billion parameters. The primary benefit of SLMs is their ability to run locally on consumer-grade hardware with latency under 50ms for the "Time to First Token" (TTFT).
+
+4. Deployment and Scalability
+Production AI systems are now containerized using Docker and orchestrated via Kubernetes. A critical standard for 2026 is "Observability-First Design." Every RAG pipeline must be instrumented with tracing tools like Langfuse or Langsmith. This allows engineers to track the cost per request and the "Faithfulness" score of responses in real-time.
+
+5. Evaluation Metrics (The RAGAS Standard)
+To verify AI reliability, the RAGAS framework is used to calculate four primary metrics:
+- Faithfulness: Ensuring the answer is derived solely from the provided context.
+- Answer Relevance: Ensuring the response directly addresses the user query.
+- Context Precision: Measuring the signal-to-noise ratio in retrieved chunks.
+- Context Recall: Checking if the system found all necessary information to answer the question.
+
+Standard production benchmarks for 2026 require a Faithfulness score of at least 0.85 and an Answer Relevance score above 0.90 for enterprise-grade deployment.
+
+6. Hardware Considerations
+Local inference in 2026 relies heavily on NPUs (Neural Processing Units). While NVIDIA GPUs remain the gold standard for training and fine-tuning (SFT/DPO), local AI assistants are optimized for 4-bit and 8-bit quantization (GGUF/EXL2 formats) to reduce VRAM consumption by 50% without significant loss in perplexity.

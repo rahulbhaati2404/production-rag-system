@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.env
+
+# Project Specific
+vector_db/
+data/processed/
+chunks.pkl
+
+# System
+.DS_Store
