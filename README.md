@@ -1,3 +1,11 @@
+
+Project Title: Production-Grade RAG.
+
+The Problem: Solving hallucinations in technical document retrieval.
+
+The Tech Stack: LangChain, ChromaDB, Ollama (Llama 3.2), Cross-Encoders, Ragas.
+
+-------------------------------------------------------------
 This system will be a domain-specific RAG pipeline (e.g., for technical docs or legal papers) that focuses on trust. Unlike a basic demo, this system will:
 
 Hybrid Search: Combine semantic meaning with keyword matching.
@@ -41,3 +49,24 @@ Location: notebooks/02_vector_storage.ipynb
 
 Purpose: Convert text chunks into vectors using an embedding model and save them into ChromaDB.
 --------------------------------------------------------------------
+Step 3: The Retrieval and Generation (RAG) Engine
+File: 03_retrieval_agent.py
+
+Purpose: This is the final piece of the core pipeline. It connects your Vector Database (from Step 2) to a Local LLM (via Ollama). When you ask a question, this script finds the right context and forces the LLM to answer using only that information.
+
+-------------------------------------------------------------------------------
+Phase 4: The Re-ranker (Precision Engineering)
+File: 04_reranked_retrieval.py
+
+Purpose: Improve accuracy by using a Cross-Encoder to re-sort results before the LLM sees them.
+------------------------------------------------------------------------------------
+Phase 5: Automated Evaluation (The Quality Gate)
+File: 05_evaluation_ragas.py
+
+Purpose: Quantify the quality of your RAG pipeline so you can catch regressions before deploying to GitHub.
+-------------------------------------------------------------------------------------
+File Specification:
+
+Location: Dockerfile
+
+Purpose: Packages your entire environment so it can be deployed to the cloud or another server.
